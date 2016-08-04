@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.annotation.cls.MyAnnotation;
 import com.example.annotation.runtime.ClassInfo;
 import com.example.annotation.runtime.FieldInfo;
 import com.example.annotation.runtime.MethodInfo;
@@ -16,6 +17,7 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.util.Arrays;
 
+@MyAnnotation("Hello Annotation")
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     TextView mTvDesc;
