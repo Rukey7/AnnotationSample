@@ -23,6 +23,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button mBtnClass;
     Button mBtnSource;
 
+    boolean mIsOpen = true;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,8 +49,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_runtime:
                 _testRuntimeAnnotation();
                 break;
+            case R.id.btn_source:
+                _testSourceAnnotation();
+                break;
         }
     }
+
 
     /**
      * 测试运行时注解
@@ -94,5 +100,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         mTvDesc.setText(sb.toString());
+    }
+
+    /**
+     * 测试源码注解
+     */
+    private void _testSourceAnnotation() {
+        if (mIsOpen) {
+//            TestSourceAnnotation.setStatus(1); 直接设置数值编译器会直接提示错误
+            TestSourceAnnotation.setStatus(TestSourceAnnotation.STATUS_CLOSE);
+            mIsOpen = false;
+        } else {
+            TestSourceAnnotation.setStatus(TestSourceAnnotation.STATUS_OPEN);
+            mIsOpen = true;
+        }
+
+        mTvDesc.setText(TestSourceAnnotation.getStatusDesc());
     }
 }
