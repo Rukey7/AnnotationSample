@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.neenbedankt.android-apt'
 
 android {
     compileSdkVersion 23
@@ -18,7 +19,9 @@ android {
         }
     }
 
-
+//    packagingOptions {
+//        exclude 'META-INF/services/javax.annotation.processing.Processor'
+//    }
 }
 
 dependencies {
@@ -26,5 +29,6 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.4.0'
     compile project(':annotations')
-    compile project(':processors')
+//    compile project(':processors')  替换掉
+    apt project(':processors')
 }
