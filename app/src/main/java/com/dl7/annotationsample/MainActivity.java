@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.annotation.cls.JPHelloWorld;
 import com.example.annotation.cls.MyAnnotation;
 import com.example.annotation.runtime.ClassInfo;
 import com.example.annotation.runtime.FieldInfo;
@@ -17,6 +18,7 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.util.Arrays;
 
+@JPHelloWorld
 @MyAnnotation("Hello Annotation")
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 

@@ -6,4 +6,5 @@ dependencies {
     targetCompatibility = 1.7
     compile project(':annotations')
     compile 'com.google.auto.service:auto-service:1.0-rc2'
+    compile 'com.squareup:javapoet:1.7.0'
 }
